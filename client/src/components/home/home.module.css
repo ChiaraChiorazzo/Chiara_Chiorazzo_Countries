@@ -1,0 +1,102 @@
+/* SearchBAr and Filters */
+body{
+  background-color: #e0e8f0;
+}
+.containerFilters{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 10vh;
+    background-color: #e0e8f0;
+}
+
+.searchBarContainer{
+    display: flex;
+    align-items: center;
+
+}
+
+.searchBarImg{
+    width: 30px;
+    height: 30px;
+    padding: 3px;
+}
+
+.filter{
+    margin-top: 18px;
+    margin-bottom: 10px;
+    height: fit-content;
+    width: fit-content;
+    border: 2px solid #54cccc; 
+    border-radius: 5px; 
+    box-shadow: 0 0 5px rgba(84, 204, 204, 0.5);
+    padding: 8px;
+}
+  .filter:hover {
+    background-color: #499999;
+    cursor: pointer; 
+  }
+  
+  .clearButton{
+    margin-top: 18px;
+    margin-bottom: 10px;
+    height: fit-content;
+    width: fit-content;
+    border: 2px solid #54cccc; 
+    border-radius: 5px; 
+    box-shadow: 0 0 5px rgba(84, 204, 204, 0.5);
+    padding: 8px;
+    background-color:#54cccc ;
+}
+  .clearButton:hover {
+    background-color: #499999;
+    cursor: pointer; 
+  }
+  .filtersSeparation{
+    margin:0%;
+    margin-top:3%;
+  }
+
+/* Continents and Cards*/
+.containerContAndCards{
+    background-color: #e0e8f0;
+    display: flex;
+    background-image:url(../../img/fondoHome.jpg) ;
+    background-repeat: no-repeat;
+    
+}
+.containerContinents{
+    margin: 2%;
+    display: flex;
+    flex-direction: column;
+}
+.continent:focus{
+  filter: contrast(4);
+}
+
+.cardsContainer{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: start;
+  margin-top: 2%;
+
+}
+
+/* pages */
+.pagsContainer{
+  background-color:#e2ebf3 ;
+  margin-top: 1%;
+}
+.pagsButton{
+  margin-left: 1.2%;
+  margin-bottom: 4%;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: #408787;
+}
+.pagsButton:focus{
+  background-color:#58dada ;
+}
+

@@ -1,0 +1,139 @@
+.container{
+  background-image: url(../../img/fondoAct.jpg);
+  height: 130vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: space-evenly;
+}
+.titleContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -3%;
+    margin-bottom: -4%;
+    background-color: white;
+  
+}
+.titleImg{
+    width: 9vw;
+    height: fit-content;
+    margin-top: 0%;
+    padding: 5%;
+}
+
+.title{
+font-size: 30px;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+}
+
+.buttonLink{
+    margin-left: -90%;
+}
+.button{
+    width: 3vw;
+    margin-top: 40px;
+    margin-bottom: -5%;
+
+}
+.button:hover{
+    filter: saturate(3) ;
+    cursor: pointer;
+}
+
+.formContainer{
+    border: 1px solid #40ceea8f; 
+    border-radius: 70px 0px 70px 0px;
+    background-color: #2a94a964;
+    padding: 30px;
+    width: 400px;
+    height: fit-content;
+    margin:-10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+
+}
+
+p{
+    color: red;
+    margin: 0%;
+}
+.label{
+    color: whitesmoke;
+    font-weight: bold;
+}
+.input, .select{
+    border-radius:20px;
+    border: white;
+    margin: 5%;
+}
+
+.countries{
+    display: flex;
+    justify-content: space-evenly;
+}
+.buttonAdd{
+    height: fit-content;
+    width: 100px;
+    border: 2px solid #1a7777; 
+    border-radius: 5px; 
+    box-shadow: 0 0 5px rgba(39, 166, 166, 0.5);
+    padding: 8px;
+    background-color:#2B8a9D ;
+    color: whitesmoke;
+    margin-top: 3%;
+       
+    }
+    
+.buttonAdd:hover{
+        filter: contrast(3) ;
+        cursor: pointer;
+    }
+
+.imgF{
+    width: 90px;
+    height: 50px;
+    border-radius:50px ;
+    padding: 5%;
+}
+
+.containerFlags{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 3%;
+    margin-bottom: 5%;
+
+}
+.containerNameFlags{
+    display: flex;
+    flex-direction: column;
+}
+.flagName{
+    color:whitesmoke
+}
+.flagButton{
+    border: none;
+    background-color: white;
+}
+.flagButton:hover{
+    background-color: red;
+    cursor: pointer;
+    color: white;
+}
+.buttonCreateAct{
+    border-radius: 20px;
+    text-decoration: none;
+    color: white;
+    background-color:#505eaa ;
+    width: auto;
+    height: 10%;
+    font-size: 1.3em;
+}
+.buttonCreateAct:hover{
+background-color: #3e4671;
+cursor: pointer;
+}

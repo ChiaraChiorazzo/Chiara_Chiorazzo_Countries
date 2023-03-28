@@ -1,0 +1,79 @@
+
+.container{
+  width: 100vw;
+  height: 100vh; 
+  overflow: hidden;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  background-image: url(../../img/loginPic.jpg);
+
+}
+.imgA{
+     width: 150%;
+    height: 100vh;
+    object-fit: cover; 
+
+}
+.button{
+    position: absolute;
+    top:60%;
+    left: 75%;
+    z-index: 1;
+    border-radius: 20px;
+    text-decoration: none;
+    color: white;
+    background-color:#505eaa ;
+    width: 15%;
+    height: 10%;
+    font-size: 2em;
+
+}
+.button:hover{
+    background-color: #3e4671;
+    cursor: pointer;
+
+}
+@media (max-width: 800px) {
+    .button {
+        top:30%;
+        left: 35%;
+        width: 35%;
+        font-size: 1.5em;
+    }
+
+}
+
+.title1{
+    position: absolute;
+    top:31%;
+    left: 72%;
+    z-index: 1;
+    font-size: 30px;
+    color:whitesmoke ;
+    letter-spacing: 4px;
+}
+@media (max-width: 800px){
+    .title1{
+        top:5%;
+        left:30%;
+        font-size: 30px;
+    }
+}
+.title2{
+    position: absolute;
+    top:35%;
+    left: 72%;
+    z-index: 1;
+    font-size: 46px;
+    color: whitesmoke;
+    letter-spacing: 5px;
+    
+}
+@media (max-width: 800px){
+    .title2{
+        top:10%;
+        left:30%;
+        font-size: 35px;
+    }
+}

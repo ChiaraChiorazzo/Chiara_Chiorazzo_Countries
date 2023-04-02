@@ -16,7 +16,7 @@ const Form = () => {
     //Used for save the input when choosing a country from the list
     const inputRef = useRef(null)
     //Used for save the input that we want to delete 
-    const inputRefCountryToDelete = useRef(null)
+    let inputRefCountryToDelete = useRef(null)
 
     //Used to go back to home once the activity is created
     const history = useHistory()
@@ -68,9 +68,10 @@ const Form = () => {
 
         event.preventDefault()
         //if i delete all the countries that i've selected, i set my local state as an empty array so i dont have the value:undefined and i also do the validations again so i can show again the error countries must be selected.
-        if(selectedCountries.length - 1 < 1){setSelectedCountries([])
+        if(selectedCountries.length - 1  < 1){setSelectedCountries([])
+        
             setErrors(validate({ ...newActivity, country: []  }))}
-
+console.log("input", inputRefCountryToDelete)
         const updatedCountries = selectedCountries.filter((c) => c !== inputRefCountryToDelete.current.value)
         setSelectedCountries(updatedCountries)
     }
@@ -138,7 +139,7 @@ const Form = () => {
                 <datalist id="dataList">
                     {
                         filtered?.map((country) => {
-                            return <option value={country} ></option>
+                            return <option value={country}></option>
 
                         }
                         )

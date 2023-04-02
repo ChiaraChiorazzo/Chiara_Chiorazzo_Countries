@@ -70,7 +70,6 @@ const Home = (props) => {
     //Handler of the clear button
     const handleOnclickClear = (event) => {
         setQueries({ ...queries, activity: "", name: "", continent: "", sort: "", page: "" })
-        window.location.reload()
     }
 
     //Handler of pagination
@@ -90,20 +89,18 @@ const Home = (props) => {
                 </div>
 
                 {/* FILTER BY ACTIVITY */}
-                <select className={style.filter} id="ActivitiesList" onChange={handleOnChangeAct}>
-                    <option value="" hidden></option>
+                <select value={queries.activity} className={style.filter} id="ActivitiesList" onChange={handleOnChangeAct}>
+                    <option value="All" >All Activities</option>
                     {
                         activities.map(act => {
                             return <option value={act}>{act}</option>
                         })
-                    }
-
-                    {/*SORTER  */}
+                    }         
                 </select>
 
-                    {/*SORTER FILTER  */}
-                <select className={style.filter} id="SortList" onChange={handleOnChangeSort}>
-                    <option value="" hidden></option>
+                        {/*SORTER FILTER  */}
+                <select value={queries.sort} className={style.filter} id="SortList" onChange={handleOnChangeSort}>
+                    <option value="None">Sort</option>
                     <option value="A-Z">Sort by Name (A-Z)</option>
                     <option value="Z-A">Sort by Name (Z-A)</option>
                     <option value="PopLow-High">Sort by Population (Low-High)</option>
@@ -114,6 +111,7 @@ const Home = (props) => {
                 <button className={style.clearButton} onClick={handleOnclickClear} value="">CLEAR FILTERS</button>
 
             </div>
+            
                 <hr className={style.filtersSeparation} />
 
             <div className={style.pagsContainer}>
@@ -192,9 +190,10 @@ const Home = (props) => {
                 </div>
             </div>
 
-        <div className={style.pagsContainer}>
 
                 {/* PAGINATION */}
+        <div className={style.pagsContainer}>
+
                 {
                     TotalPagesArray.map(p => {
                         return <button value={p} onClick={handleonClickPages} className={style.pagsButton}> {p} </button>

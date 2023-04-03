@@ -128,46 +128,46 @@ const Home = (props) => {
             <div className={style.containerContAndCards}>
                 <div className={style.containerContinents}>
 
-                    <input className={style.continent} name="all" type="image" src={all} onClick={handleOnClick} value=""></input>
+                    <input className={style.continent} name="all" type="image" src={all} alt="all countries" onClick={handleOnClick} value=""></input>
                     <label htmlFor="all">
                         ALL COUNTRIES
                     </label>
 
 
-                    <input className={style.continent} name="africa" type="image" src={africa} onClick={handleOnClick} value="AFRICA"></input>
+                    <input className={style.continent} name="africa" type="image" src={africa} alt="Africa" onClick={handleOnClick} value="AFRICA"></input>
                     <label htmlFor="africa">
                         AFRICA
                     </label>
 
-                    <input className={style.continent} name="asia" type="image" src={asia} onClick={handleOnClick} value="ASIA"></input>
+                    <input className={style.continent} name="asia" type="image" src={asia} alt="Asia" onClick={handleOnClick} value="ASIA"></input>
                     <label htmlFor="asia">
                         ASIA
                     </label>
 
 
-                    <input className={style.continent} name="antarctica" type="image" src={antarctica} onClick={handleOnClick} value="ANTARCTICA"></input>
+                    <input className={style.continent} name="antarctica" type="image" src={antarctica} alt = "Antarctica" onClick={handleOnClick} value="ANTARCTICA"></input>
                     <label htmlFor="antarctica">
                         ANTARCTICA
                     </label>
 
 
-                    <input className={style.continent} name="europe" type="image" src={europe} onClick={handleOnClick} value="EUROPE"></input>
+                    <input className={style.continent} name="europe" type="image" src={europe} alt="Europe" onClick={handleOnClick} value="EUROPE"></input>
                     <label htmlFor="europe">
                         EUROPE
                     </label>
 
 
-                    <input className={style.continent} name="northAmerica" type="image" src={northAmerica} onClick={handleOnClick} value="NORTH AMERICA"></input>
+                    <input className={style.continent} name="northAmerica" type="image" src={northAmerica} alt="North America" onClick={handleOnClick} value="NORTH AMERICA"></input>
                     <label htmlFor="northAmerica">
                         NORTH AMERICA
                     </label>
 
-                    <input className={style.continent} name="oceania" type="image" src={oceania} onClick={handleOnClick} value="OCEANIA"></input>
+                    <input className={style.continent} name="oceania" type="image" src={oceania} alt="Oceania" onClick={handleOnClick} value="OCEANIA"></input>
                     <label htmlFor="oceania">
                         OCEANIA
                     </label>
 
-                    <input className={style.continent} name="southAmerica" type="image" src={SouthAmerica} onClick={handleOnClick} value="SOUTH AMERICA"></input>
+                    <input className={style.continent} name="southAmerica" type="image" src={SouthAmerica} alt="South America" onClick={handleOnClick} value="SOUTH AMERICA"></input>
                     <label htmlFor="southAmerica">
                         SOUTH AMERICA
                     </label>

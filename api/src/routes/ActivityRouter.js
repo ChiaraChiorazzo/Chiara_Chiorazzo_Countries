@@ -10,10 +10,10 @@ router.get('/', async (req, res) => {
         if (activities) {
             res.status(200).json(activities)
         } else {
-            res.status(404).send('no se encontraron actividades')
+            res.status(404).send('activities not founded')
         }
     } catch (error) {
-        return { error: error.message, msg: "Error en la ruta get Activities " }
+        return { error: error.message, msg: "Error in the route Activities " }
     }
 })
 
@@ -30,11 +30,11 @@ router.post('/', async (req, res) => {
         if (newActivity) {
             res.status(200).json(newActivity)
         } else {
-            res.status(400).send("Falta informacion a completar")
+            res.status(400).send("Missing information")
         }
     } catch (error) {
 
-        return { error: error.message, msg: "Error en la ruta post Activities " }
+        return { error: error.message, msg: "Error in the route post Activity " }
 
     }
 })

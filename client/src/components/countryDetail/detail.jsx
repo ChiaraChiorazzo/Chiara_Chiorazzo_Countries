@@ -19,7 +19,7 @@ const CountryDetail = (props) => {
     
     return (
     <div className={style.container} >
-        <Link className={style.buttonLink} to="/home"><input type="image" src={arrow} className={style.button}></input></Link>
+        <Link className={style.buttonLink} to="/home"><input type="image" src={arrow} alt="arrow to go back" className={style.button}></input></Link>
         <div className={style.card}>
             <img className={style.img}src={countryDetail.flag} alt={countryDetail.name} />
             <hr />

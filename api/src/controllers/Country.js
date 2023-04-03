@@ -5,7 +5,7 @@ const getAllCountries = async ({ name, continent, activity, sort, pageSize, page
     try {
         let allCountries = await Country.findAll(
             {
-                //queremos que además de mostranos los paises nos traiga que actividades se realizan en estos, por eso le decimos que tamb incluya Activity.
+                //brings the countries including the activities done in each country
                 include: {
                     model: Activity,
                     attributes: ['name'],
@@ -14,29 +14,28 @@ const getAllCountries = async ({ name, continent, activity, sort, pageSize, page
                     }
                 }
             })
-        
-        //Este if es el de ordenamiento si por query le paso sort=A-Z me lo ordena ascendente, si le paso sort=Z-A me lo ordena descendiente by name, si le paso Pop ordena por cant de habitantes
+
+        //sorter by name or by population
         if (sort === "A-Z") {
             allCountries = await allCountries.sort((a, b) => a.name.localeCompare(b.name));
         } else if (sort === "Z-A") {
             allCountries = await allCountries.sort((a, b) => b.name.localeCompare(a.name));
-        }else if (sort === "PopLow-High") {
+        } else if (sort === "PopLow-High") {
             allCountries = await allCountries.sort((a, b) => a.population - b.population);
         } else if (sort === "PopHigh-Low") {
             allCountries = await allCountries.sort((a, b) => b.population - a.population);
         }
 
-       // filtro por actividad y continente
-       
+        // filter by activity 
         if (activity) {
             allCountries = await allCountries.filter(country => {
                 return country.activities.some(act => act.name.toLowerCase().includes(activity.toLowerCase()));
             });
 
-            //filtro solo por continente     
-        }  if (continent) {
+            //filter by continent     
+        } if (continent) {
             allCountries = await allCountries.filter(country => country.continent.toLowerCase().includes(continent.toLowerCase()))
-        }  if (name) {
+        } if (name) {
             allCountries = await allCountries.filter(country => country.name.toLowerCase().includes(name.toLowerCase()))
         }
 
@@ -48,11 +47,11 @@ const getAllCountries = async ({ name, continent, activity, sort, pageSize, page
         const totalPages = Math.ceil(allCountries.length / pageSize)
         const currentPage = parseInt(page)
         return {
-            //cambien countries: countriesToShow a allCountries
+
             countries: countriesToShow, totalPages, currentPage
         }
     } catch (error) {
-        return { error: error.message, msg: "Error al intentar mostrar la info de la BD" }
+        return { error: error.message, msg: "Error when trying to show info from DB" }
     }
 }
 
@@ -71,15 +70,14 @@ const getCountryById = async (idPais) => {
         })
         return country
     } catch (error) {
-        return { error: error.message, msg: "Error al intentar mostrar la info de la BD " }
+        return { error: error.message, msg: "Error when trying to show info form DB " }
     }
 }
 
-const getTheTotalityOfCountries = async() =>{
+const getTheTotalityOfCountries = async () => {
     try {
         let totalityOfCountries = await Country.findAll(
             {
-                //queremos que además de mostranos los paises nos traiga que actividades se realizan en estos, por eso le decimos que tamb incluya Activity.
                 include: {
                     model: Activity,
                     attributes: ['name'],
@@ -88,11 +86,11 @@ const getTheTotalityOfCountries = async() =>{
                     }
                 }
             })
-            console.log("estos son la totalidad de paises", totalityOfCountries )
-            return totalityOfCountries
+
+        return totalityOfCountries
     } catch (error) {
-        return { error: error.message, msg: "Error al intentar mostrar la info de la BD " }
+        return { error: error.message, msg: "Error when trying to show info from DB " }
     }
 }
 
-module.exports = { getAllCountries, getCountryById , getTheTotalityOfCountries}
+module.exports = { getAllCountries, getCountryById, getTheTotalityOfCountries }

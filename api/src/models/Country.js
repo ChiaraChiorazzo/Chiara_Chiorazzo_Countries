@@ -1,11 +1,9 @@
 const { DataTypes } = require('sequelize');
 
-// Exportamos una funcion que define el modelo
-// Luego le injectamos la conexion a sequelize.
+
 module.exports = (sequelize) => {
-  // defino el modelo
+ 
   sequelize.define('country', {
-    //el type de id será string ya que son 3 letras 
     id: {
        type: DataTypes.STRING(3),
        primaryKey:true,
@@ -43,7 +41,7 @@ module.exports = (sequelize) => {
     }
 
   }, {
-    //elimino columnas que agrega por default
+    //Delete the columns added by default
     timestamps: false,
       }
   );

@@ -1,10 +1,10 @@
 const { DataTypes } = require('sequelize');
 
-//exportamos la funcion que define al modelo y le inyectamos la conexión a sequelize
+//exports the function that define the model and we inject to it sequelize
 module.exports = (sequelize) => {
-    //definimos nuestro modelo: 
+    //model definition: 
     sequelize.define('activity', {
-        //uso UUID para el id 
+        // UUID for the id 
         id: {
             type: DataTypes.UUID,
             defaultValue: DataTypes.UUIDV4,
@@ -28,15 +28,13 @@ module.exports = (sequelize) => {
             },
         },
         duration: {
-            //suponiendo que puede durar 1.5 horas es decir hora y media
+           
             type: DataTypes.INTEGER,
             allowNull: true,
-            // validate: {
-            //     min: 0,
-            // },
+           
         },
         season: {
-            //solo puede ser una de las 4 estaciones 
+            
             type: DataTypes.ENUM('verano', 'otoño', 'invierno', 'primavera'),
             allowNull: false,
         }

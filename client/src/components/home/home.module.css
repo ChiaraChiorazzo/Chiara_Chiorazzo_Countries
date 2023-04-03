@@ -53,8 +53,8 @@ body{
     cursor: pointer; 
   }
   .filtersSeparation{
-    margin:0%;
-    margin-top:3%;
+    display: flex;
+    justify-content: flex-start;
   }
 
 /* Continents and Cards*/
@@ -78,7 +78,7 @@ body{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  align-items: start;
+  align-items: flex-start;
   margin-top: 2%;
 
 }

@@ -3,33 +3,31 @@ const { Country, Activity } = require("../db")
 const getAllActivities = async () => {
     try {
         const allActivities = await Activity.findAll()
-        console.log(allActivities, "sjkdal")
         return allActivities
 
     } catch (error) {
-        return { error: error.message, msg: "Error al intentar mostrar la info de la BD" }
+        return { error: error.message, msg: "Error when trying to show the info from DB" }
     }
 }
 
 const createActivity = async ({  name, dificulty, duration, season, country }) => {
-    //Valido que me envien toda la info 
-    //hacerlo funcion 
+    //Validate if i receive all the information needed
     try{
-    if(!name) throw new Error (" ame es dato requerido")
-    if(!dificulty) throw new Error (" dificulty es dato requerido")
-    if(!season) throw new Error (" season es dato requerido")
-    if(!country) throw new Error ("country es dato requeridos")
+    if(!name) throw new Error (" name is required")
+    if(!dificulty) throw new Error (" dificulty is required")
+    if(!season) throw new Error (" season is required")
+    if(!country) throw new Error ("country is required")
 
-    //Valido que countries sea un array
-    if(!Array.isArray(country)) throw new Error ("Countries debe ser un array")
-    if(country.length < 1) throw new Error ("debe contener al menos un pais ")
+    //Country is an array?
+    if(!Array.isArray(country)) throw new Error ("Countries must be an array")
+    if(country.length < 1) throw new Error ("country must have at least one country ")
     
 
-    //Agrego relacion 
+    //Relation between activity and country
     const activity = await Activity.create({name, dificulty, duration, season})
     const countries = await Country.findAll({where:{name:country}})
     await activity.addCountry(countries)
-    return "actividad creada con Exito"
+    return "Your activity has been created"
 
 } catch (error){
     return { error: error.message }

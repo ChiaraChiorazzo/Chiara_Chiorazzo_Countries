@@ -5,7 +5,7 @@ const {Country, Activity} = require("../db")
 const getApiData = async () => {
 try {
  
-    //traigo toda la info y la guardo en el array
+    //Brings all the info and save just the info that i'll need in an array
     const  response  = await axios.get('https://restcountries.com/v3/all');
     
     let apiInfo = response.data.map(({cca3, name, flags, continents, capital, subregion, area, population}) => (
@@ -23,22 +23,22 @@ try {
     return apiInfo
 
 } catch (error) {
-    return {error: error.message, msg:"Error en el map o trayendo la info de la Api"}
+    return {error: error.message, msg:"Error when bringing the info from the API"}
 }
 }
 
 const saveApiData = async () => {
     try {
-    //ejecuta la funcion getApiData y guarda toda la info en una variable --> allCountries es un array de objetos 
+    //Execute the function getApiData and save the info in AllCountries --> allCountries is an array of objects
         const allCountries = await getApiData()
         
-    //bulkCreate permite pasarle un array de objetos y los crea todos juntos en la BD, no crea uno por un
+    //bulkCreate alouds to send an array of objects and create them in the DB all at the same time not one by one
     await Country.bulkCreate(allCountries, {ignoreDuplicates:true})
 
     return allCountries
 
     } catch (error) {
-        return {error: error.message, msg: "Error al intentar guardar la informacion en la DB"}
+        return {error: error.message, msg: "Error when trying to save the info in the DB"}
     }
 
 }

@@ -10,13 +10,15 @@ const getAllActivities = async () => {
     }
 }
 
-const createActivity = async ({  name, dificulty, duration, season, country }) => {
+const createActivity = async ({  name, dificulty, duration, season, country,price }) => {
     //Validate if i receive all the information needed
     try{
     if(!name) throw new Error (" name is required")
     if(!dificulty) throw new Error (" dificulty is required")
     if(!season) throw new Error (" season is required")
     if(!country) throw new Error ("country is required")
+    if(!price) throw new Error ("price is required")
+
 
     //Country is an array?
     if(!Array.isArray(country)) throw new Error ("Countries must be an array")
@@ -24,7 +26,7 @@ const createActivity = async ({  name, dificulty, duration, season, country }) =
     
 
     //Relation between activity and country
-    const activity = await Activity.create({name, dificulty, duration, season})
+    const activity = await Activity.create({name, dificulty, duration, season, price})
     const countries = await Country.findAll({where:{name:country}})
     await activity.addCountry(countries)
     return "Your activity has been created"

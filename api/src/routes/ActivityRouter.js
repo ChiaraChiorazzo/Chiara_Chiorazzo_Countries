@@ -25,8 +25,9 @@ router.post('/', async (req, res) => {
             duration,
             season,
             country,
+            price,
         } = req.body
-        const newActivity = await createActivity({ name, dificulty, duration, season, country})
+        const newActivity = await createActivity({ name, dificulty, duration, season, country, price})
         if (newActivity) {
             res.status(200).json(newActivity)
         } else {

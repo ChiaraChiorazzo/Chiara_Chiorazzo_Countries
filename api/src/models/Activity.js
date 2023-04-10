@@ -37,6 +37,10 @@ module.exports = (sequelize) => {
             
             type: DataTypes.ENUM('verano', 'otoño', 'invierno', 'primavera'),
             allowNull: false,
+        },
+        price:{
+            type: DataTypes.INTEGER,
+            allowNull:true,
         }
 
     }, {
